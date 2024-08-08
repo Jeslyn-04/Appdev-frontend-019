@@ -1,0 +1,78 @@
+/* src/Navbar.css */
+.navbar {
+  background-color: transparent;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /*box-shadow: 0 0 30px rgb(119, 243, 84);*/
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin: 0px 20px;
+  font-size: 28px;
+}
+
+.nav-link {
+  position: relative; /* Required for positioning the ::before pseudo-element */
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0px 20px;
+  text-decoration: none;
+  font-family: cursive;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link::before {
+  content: '';
+  display: block;
+  height: 6px;
+  background-color: #ffffff;
+  position: absolute;
+  top: -20px;
+  width: 0%;
+  transition: width ease-in-out 250ms;
+  left:0;
+}
+
+.nav-link:target::before,
+.nav-link.active::before {
+  width: 100%;
+}
+
+.active {
+  color: #000000;
+}
+
+.profile-icon {
+  margin-left: auto;
+}
+
+.profile-icon .nav-link {
+  padding: 0;
+}
+
+.profile-icon .nav-link svg {
+  width: 40px;
+  height: 40px;
+  color: rgb(0, 0, 0);
+}
